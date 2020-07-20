@@ -3,7 +3,7 @@ module.exports = (register, knex, ) => {
         knex("users")
         .select('*').where({"email" :req.body.email})
         .then((data)=>{
-            if (data.length<0){
+            if (data.length !=0){
                 res.send('user already exist !')
             }else{
                 knex('users')
